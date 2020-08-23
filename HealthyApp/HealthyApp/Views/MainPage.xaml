@@ -1,11 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HealthyApp.Views.MainPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="HealthyApp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    xmlns:views="clr-namespace:HealthyApp.Views;assembly=HealthyApp"
+    FlowDirection="RightToLeft"
+    NavigationPage.HasNavigationBar="False">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+        <Grid Padding="8" BackgroundColor="{StaticResource Primary}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    FontFamily="{StaticResource ShabnameBold}"
+                    FontSize="18"
+                    Text="نمودار تشخیص ها"
+                    TextColor="White" />
+            </StackLayout>
 
+            <Grid Grid.Row="1" Margin="0,15,0,35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <forms:ChartView
+                    x:Name="mainChart"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Fill" />
+                <forms:ChartView
+                    x:Name="mainChartB"
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Fill" />
+            </Grid>
+            <Button
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Margin="3,0,3,-25"
+                Padding="25,0"
+                BackgroundColor="#eee"
+                Clicked="AddPatientButton_OnClicked"
+                CornerRadius="50"
+                FontFamily="{StaticResource ShabnameBold}"
+                HeightRequest="37"
+                HorizontalOptions="Start"
+                Text="+  تشخیص جدید"
+                TextColor="{StaticResource Primary}"
+                VerticalOptions="End" />
+        </Grid>
+        <StackLayout Grid.Row="1" Padding="0,20">
+            <StackLayout Margin="10,0" Orientation="Horizontal">
+                <Label
+                    FontFamily="{StaticResource ShabnameBold}"
+                    FontSize="17"
+                    Text="تشخیص های اخیر"
+                    TextColor="#444" />
+            </StackLayout>
+            <RefreshView x:Name="refreshView" Refreshing="RefreshView_OnRefreshing">
+                <CollectionView x:Name="mainCollection">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:PaitentItem Margin="0,0,0,10" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </Grid>
 </ContentPage>

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="HealthyApp.Views.PatientDialog"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:HealthyApp.Models;assembly=HealthyApp"
+    Margin="15,0"
+    FlowDirection="RightToLeft"
+    VerticalOptions="Center"
+    mc:Ignorable="d">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Margin="0,80,0,0">
+
+                <Frame Grid.Row="0" CornerRadius="8">
+                    <StackLayout Margin="0,15,0,0" HorizontalOptions="Center">
+                        <Label
+                            x:Name="titleLabel"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            Text="مریـــض"
+                            TextColor="{StaticResource Danger}" />
+                        <Label
+                            x:Name="nameLabel"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            HorizontalOptions="Center"
+                            Text="امیرحسین خادمی"
+                            TextColor="#444" />
+                        <Label
+                            x:Name="dateLabel"
+                            FontFamily="{StaticResource Shabname}"
+                            HorizontalOptions="Center"
+                            Text="25 / 10 / 2017"
+                            TextColor="#444" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame
+                    Margin="0,-45,0,0"
+                    Padding="0"
+                    CornerRadius="100"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start">
+                    <Label
+                        x:Name="logoLebel"
+                        FontFamily="{StaticResource MaterialFontFamily}"
+                        FontSize="80"
+                        HorizontalOptions="Center"
+                        Text="{x:Static model:MaterialIconFont.CloseCircle}"
+                        TextColor="{StaticResource Danger}" />
+                </Frame>
+            </Grid>
+            <Frame
+                Grid.Row="1"
+                Padding="10,5"
+                CornerRadius="8">
+                <Entry
+                    x:Name="nameEntry"
+                    FontFamily="{StaticResource Shabname}"
+                    FontSize="13"
+                    IsEnabled="False"
+                    Placeholder="نام و نام خانوادگی" />
+            </Frame>
+            <Frame
+                Grid.Row="2"
+                Padding="10,5"
+                CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontFamily="{StaticResource Shabname}"
+                        Text="جنسبت : "
+                        VerticalOptions="Center" />
+                    <Picker
+                        x:Name="sexPicker"
+                        Grid.Column="1"
+                        FontFamily="{StaticResource Shabname}"
+                        FontSize="13"
+                        IsEnabled="False">
+                        <Picker.Items>
+                            <x:String>زن</x:String>
+                            <x:String>مرد</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+            </Frame>
+            <Frame
+                Grid.Row="3"
+                Padding="10,5"
+                CornerRadius="8">
+                <Entry
+                    x:Name="ageEntry"
+                    FontFamily="{StaticResource Shabname}"
+                    FontSize="13"
+                    IsEnabled="False"
+                    Keyboard="Numeric"
+                    Placeholder="سن بیمار" />
+            </Frame>
+            <Frame
+                Grid.Row="4"
+                Padding="10,5"
+                CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontFamily="{StaticResource Shabname}"
+                        Text="درد قفسه سینه : "
+                        VerticalOptions="Center" />
+                    <Picker
+                        x:Name="cpPicker"
+                        Grid.Column="1"
+                        FontFamily="{StaticResource Shabname}"
+                        FontSize="13"
+                        IsEnabled="False">
+                        <Picker.Items>
+                            <x:String>Non Anginal Pain</x:String>
+                            <x:String>Atypical Angina</x:String>
+                            <x:String>Typical Angina</x:String>
+                            <x:String>Asymptomatic</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+            </Frame>
+            <Frame
+                Grid.Row="5"
+                Padding="10,15"
+                CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontFamily="{StaticResource Shabname}"
+                        Text="فشار خون"
+                        VerticalOptions="Center" />
+                    <Label
+                        x:Name="bloodLabel"
+                        Grid.Column="1"
+                        FontFamily="{StaticResource Shabname}"
+                        Text="50%"
+                        TextColor="{StaticResource Primary}"
+                        VerticalOptions="Center" />
+                    <Slider
+                        x:Name="bloodSlider"
+                        Grid.Column="2"
+                        IsEnabled="False"
+                        Maximum="500"
+                        MaximumTrackColor="Black"
+                        Minimum="0"
+                        MinimumTrackColor="{StaticResource Primary}"
+                        ThumbColor="{StaticResource Primary}" />
+                </Grid>
+            </Frame>
+            <Frame
+                Grid.Row="6"
+                Padding="10,15"
+                CornerRadius="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontFamily="{StaticResource Shabname}"
+                        Text="کلسترول"
+                        VerticalOptions="Center" />
+                    <Label
+                        x:Name="colLabel"
+                        Grid.Column="1"
+                        FontFamily="{StaticResource Shabname}"
+                        Text="50%"
+                        TextColor="{StaticResource Primary}"
+                        VerticalOptions="Center" />
+                    <Slider
+                        x:Name="colSlider"
+                        Grid.Column="2"
+                        IsEnabled="False"
+                        Maximum="500"
+                        MaximumTrackColor="Black"
+                        Minimum="0"
+                        MinimumTrackColor="{StaticResource Primary}"
+                        ThumbColor="{StaticResource Primary}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

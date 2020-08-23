@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="HealthyApp.Views.PaitentItem"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:HealthyApp.Models;assembly=HealthyApp"
+    Margin="0,3"
+    FlowDirection="RightToLeft"
+    VerticalOptions="Center"
+    mc:Ignorable="d">
+    <ContentView.Content>
+        <Frame
+            Margin="5"
+            Padding="0"
+            BackgroundColor="#eee"
+            CornerRadius="5"
+            HasShadow="True">
+
+            <Grid Margin="0,0,0,0" Padding="10,10,10,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Orientation="Horizontal">
+                            <Label
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="16"
+                                Text="{Binding Name}"
+                                TextColor="#444" />
+                            <StackLayout
+                                Margin="35,0"
+                                Orientation="Horizontal"
+                                VerticalOptions="Center">
+                                <Label
+                                    x:Name="statusLogo"
+                                    FontFamily="{StaticResource MaterialFontFamily}"
+                                    FontSize="26"
+                                    TextColor="{StaticResource Success}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    x:Name="statusLabel"
+                                    FontFamily="{StaticResource ShabnameBold}"
+                                    FontSize="18"
+                                    TextColor="{StaticResource Success}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,0"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Label
+                                FontFamily="{StaticResource MaterialFontFamily}"
+                                FontSize="18"
+                                Text="{x:Static model:MaterialIconFont.Account}"
+                                TextColor="#666"
+                                VerticalOptions="Center" />
+                            <Label
+                                x:Name="ageLabel"
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="12"
+                                TextColor="#666"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,0"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Label
+                                FontFamily="{StaticResource MaterialFontFamily}"
+                                FontSize="18"
+                                Text="{x:Static model:MaterialIconFont.Calendar}"
+                                TextColor="#666"
+                                VerticalOptions="Center" />
+                            <Label
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="12"
+                                Text="{Binding Age}"
+                                TextColor="#666"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="0,0"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Label
+                                FontFamily="{StaticResource MaterialFontFamily}"
+                                FontSize="18"
+                                Text="{x:Static model:MaterialIconFont.Water}"
+                                TextColor="#666"
+                                VerticalOptions="Center" />
+                            <Label
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="12"
+                                Text="{Binding Cholestoral}"
+                                TextColor="#666"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Padding="20,0"
+                            BackgroundColor="{StaticResource Primary}"
+                            Clicked="Button_OnClicked"
+                            CornerRadius="40"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            FontSize="12"
+                            HeightRequest="30"
+                            Text="توضیجات"
+                            TextColor="White" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

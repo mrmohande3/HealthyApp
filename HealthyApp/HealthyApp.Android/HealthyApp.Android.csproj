@@ -73,6 +73,15 @@
     <LinkDescription Include="LinkerSettings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\fa-regular-400.ttf" />
+    <AndroidAsset Include="Assets\IranSansBlack.ttf" />
+    <AndroidAsset Include="Assets\IranSansBold.ttf" />
+    <AndroidAsset Include="Assets\IranSansMedium.ttf" />
+    <AndroidAsset Include="Assets\IranSansULight.ttf" />
+    <AndroidAsset Include="Assets\materialdesignicons-webfont.ttf" />
+    <AndroidAsset Include="Assets\Roboto-Medium.ttf" />
+    <AndroidAsset Include="Assets\Shabnam.ttf" />
+    <AndroidAsset Include="Assets\Shabnam-Bold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
