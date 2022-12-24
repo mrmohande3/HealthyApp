@@ -19,4 +19,4 @@ Project for patient and analysis datas by Decision Tree
 
 # Screenshots
 
-<img align = "center" src="screenshots/Page01.jpg" width=32%> <img align = "center" src="screenshots/Page02.jpg" width=32%> <img align = "center" src="screenshots/Page03.jpg" width=32%>
+<img align = "center" src="ScreenShots/Page01.jpg" width=32%> <img align = "center" src="ScreenShots/Page02.jpg" width=32%> <img align = "center" src="ScreenShots/Page03.jpg" width=32%>
